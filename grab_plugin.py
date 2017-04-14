@@ -34,6 +34,7 @@ def main(plugin_ls, desired_version):
 
             zip_ref = zipfile.ZipFile(zipname, 'r')
             folder_to_dump_in = '../' + PLUGIN_DIRS[plugin.split('_')[0]]
+            print("Moving %s to %s ..." % (plugin, folder_to_dump_in))
             zip_ref.extractall(folder_to_dump_in)
             zip_ref.close()
 
