@@ -28,7 +28,7 @@ if [ ! "$DBTYPE" = "mysqli" ]; then
     exit 1
 fi
 
-mysqldump -h "$DBHOST" -u "$DBUSER" -p"$DBPASS" "$DBNAME" > "${DBNAME}.sql"
+mysql -h "$DBHOST" -u "$DBUSER" -p"$DBPASS" -D"$DBNAME"
 
 #DBNAME=$(grep -m 1 '\$CFG->dbname' "$CONFIGF")
 #DBNAME=$(grep -m 1 '\$CFG->dbname' "$CONFIGF")
