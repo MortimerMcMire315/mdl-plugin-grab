@@ -2,8 +2,8 @@
 
 if [ $# -eq 0 ]; then
     cat << END
-    Usage: bash dump_moodle_db.sh DIR
-    Creates a SQL dump of the MySQL database referenced by the config.php file
+    Usage: $0 DIR
+    Provides a MySQL shell for the database referenced by the config.php file
     inside DIR.
 END
     exit 0
