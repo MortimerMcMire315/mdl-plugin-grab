@@ -119,9 +119,24 @@ plugin_ls = [ 'mod_oublog'
             , 'mod_journal'
             , 'block_progress'
             , 'theme_essential'
+            , 'mod_attendance'
+            , 'mod_checklist'
+            , 'mod_dialogue'
+            , 'mod_hotpot'
+            , 'mod_questionnaire'
+            , 'mod_turnitintool'
+            , 'mod_turnitintooltwo'
+            , 'block_attendance'
+            , 'block_checklist'
+            , 'block_dedication'
+            , 'block_fbcomments'
+            , 'block_wikipedia'
+            , 'report_overviewstats'
+            , 'repository_evernote'
+            , 'theme_aardvark'
             ]
 
 #e.g. 3.2, 3.1, 2.9, etc.. Three-part version numbers (e.g. 3.1.7) won't work.
-desired_version = "2.8"
+desired_version = "3.2"
 
 main(plugin_ls, desired_version)

@@ -1,15 +1,16 @@
 #!/bin/bash
 
-if [ ! $# -eq 1 ]; then
+if [ ! $# -eq 2 ]; then
     cat << END
-Usage: bash dump_moodle_db.sh DIR
-Creates a SQL dump of the MySQL database referenced by the config.php file
+Usage: $0 DIR SQL
+Imports a SQL file to the MySQL database referenced by the config.php file
 inside DIR.
 END
     exit 0
 fi
 
 CONFIGF="$1/config.php"
+SQL="$2"
 
 if [ ! -f "$CONFIGF" ]; then
     echo "No config.php file found in the given directory."
@@ -28,7 +29,7 @@ if [ ! "$DBTYPE" = "mysqli" ]; then
     exit 1
 fi
 
-mysql -h "$DBHOST" -u "$DBUSER" -p"$DBPASS" -D"$DBNAME"
+pv $SQL | mysql -h "$DBHOST" -u "$DBUSER" -p"$DBPASS" -D"$DBNAME"
 
 #DBNAME=$(grep -m 1 '\$CFG->dbname' "$CONFIGF")
 #DBNAME=$(grep -m 1 '\$CFG->dbname' "$CONFIGF")
