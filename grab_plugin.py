@@ -139,4 +139,5 @@ plugin_ls = [ 'mod_oublog'
 #e.g. 3.2, 3.1, 2.9, etc.. Three-part version numbers (e.g. 3.1.7) won't work.
 desired_version = "3.2"
 
-main(plugin_ls, desired_version)
+if __name__ == "__main__":
+    main(plugin_ls, desired_version)

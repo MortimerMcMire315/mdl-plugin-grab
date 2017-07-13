@@ -2,3 +2,5 @@ plugin_types.py
 *.swp
 *.swo
 *.swn
+__pycache__/
+test.html
