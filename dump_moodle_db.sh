@@ -17,11 +17,13 @@ if [ ! -f "$CONFIGF" ]; then
 fi
 
 
-DBTYPE=$(grep -m 1 '\$CFG->dbtype' "$CONFIGF" | awk -F= '{print $2}' | sed -re "s/[^']*?'([^']+)'.*$/\1/g")
-DBHOST=$(grep -m 1 '\$CFG->dbhost' "$CONFIGF" | awk -F= '{print $2}' | sed -re "s/[^']*?'([^']+)'.*$/\1/g")
-DBNAME=$(grep -m 1 '\$CFG->dbname' "$CONFIGF" | awk -F= '{print $2}' | sed -re "s/[^']*?'([^']+)'.*$/\1/g")
-DBUSER=$(grep -m 1 '\$CFG->dbuser' "$CONFIGF" | awk -F= '{print $2}' | sed -re "s/[^']*?'([^']+)'.*$/\1/g")
-DBPASS=$(grep -m 1 '\$CFG->dbpass' "$CONFIGF" | awk -F= '{print $2}' | sed -re "s/[^']*?'([^']+)'.*$/\1/g")
+DBTYPE=$(grep -Em 1 '^[^\/]*\$CFG->dbtype' "$CONFIGF" | awk -F= '{print $2}' | sed -re "s/[^']*?'([^']+)'.*$/\1/g")
+DBHOST=$(grep -Em 1 '^[^\/]*\$CFG->dbhost' "$CONFIGF" | awk -F= '{print $2}' | sed -re "s/[^']*?'([^']+)'.*$/\1/g")
+DBNAME=$(grep -Em 1 '^[^\/]*\$CFG->dbname' "$CONFIGF" | awk -F= '{print $2}' | sed -re "s/[^']*?'([^']+)'.*$/\1/g")
+DBUSER=$(grep -Em 1 '^[^\/]*\$CFG->dbuser' "$CONFIGF" | awk -F= '{print $2}' | sed -re "s/[^']*?'([^']+)'.*$/\1/g")
+DBPASS=$(grep -Em 1 '^[^\/]*\$CFG->dbpass' "$CONFIGF" | awk -F= '{print $2}' | sed -re "s/[^']*?'([^']+)'.*$/\1/g")
+
+echo $DBHOST
 
 if [ ! "$DBTYPE" = "mysqli" ]; then
     echo "Not a MySQL database."
