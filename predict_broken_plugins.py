@@ -5,6 +5,7 @@ import requests, os, sys, re
 
 IGNORE = [ 'theme_bootstrap'
          , 'theme_bootstrapbase'
+         , 'mod_book'
          ]
 
 def main(html_file, old_version, new_version, human_readable):
