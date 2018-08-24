@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from bs4 import BeautifulSoup
 from get_installed_plugins import list_plugins
 from grab_plugin import find_plugin_zip_url

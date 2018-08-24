@@ -4,3 +4,4 @@ plugin_types.py
 *.swn
 __pycache__/
 test.html
+plugins.html
