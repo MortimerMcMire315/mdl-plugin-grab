@@ -1,0 +1,14 @@
+mod/attendance
+blocks/course_time_tracker
+blocks/sharing_cart
+blocks/sms
+blocks/zoola
+blocks/zoola_reports
+enrol/apply
+auth/oidc
+availability/lambda_timespent
+local/adminer
+local/lambda_dedication
+local/lambda_time_tracker
+local/mailtest
+local/o365
