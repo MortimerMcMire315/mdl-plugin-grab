@@ -10,7 +10,9 @@ def list_plugins(f):
         for row in plugin_table.find_all('tr'):
             row_classes = row.get('class')
             if not row_classes:
-                continue;
+                continue
+            if 'disabled' in row_classes:
+                continue
             for row_class in row_classes:
                 if re.match(r'name-',row_class):
                     plugin_names.append(re.sub(r'name-(.+)',r'\1',row_class))

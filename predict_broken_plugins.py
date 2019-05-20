@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from bs4 import BeautifulSoup
 from get_installed_plugins import list_plugins
 from grab_plugin import find_plugin_zip_url
@@ -5,6 +7,7 @@ import requests, os, sys, re
 
 IGNORE = [ 'theme_bootstrap'
          , 'theme_bootstrapbase'
+         , 'mod_book'
          ]
 
 def main(html_file, old_version, new_version, human_readable):
