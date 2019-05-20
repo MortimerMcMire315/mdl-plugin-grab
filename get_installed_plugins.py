@@ -16,7 +16,7 @@ def list_plugins(f):
                     plugin_names.append(re.sub(r'name-(.+)',r'\1',row_class))
     return(plugin_names)
 
-def sanity():
+def main():
     if len(sys.argv) is not 2:
         print("Usage: " + sys.argv[0] + " HTML")
         print("   where:")
@@ -32,4 +32,4 @@ def sanity():
         print(i)
 
 if __name__ == "__main__":
-    sanity()
+    main()

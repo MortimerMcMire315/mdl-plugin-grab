@@ -28,7 +28,7 @@ def print_if_not_exists(plugin, desired_version, human_readable):
         else:
             print(plugin)
 
-def sanity():
+def checkargs():
     if len(sys.argv) < 4:
         print("Usage: " + sys.argv[0] + " HTML OLDVERSION NEWVERSION [-h]")
         print("   where:")
@@ -60,4 +60,4 @@ def sanity():
     main(html_file, old_version, new_version, human_readable)
 
 if __name__ == "__main__":
-    sanity()
+    checkargs()
