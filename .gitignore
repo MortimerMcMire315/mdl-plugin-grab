@@ -1,3 +1,4 @@
+*.sql
 plugin_types.py
 *.swp
 *.swo
