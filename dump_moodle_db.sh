@@ -21,7 +21,7 @@ DBTYPE=$(grep -Em 1 '^[^\/]*\$CFG->dbtype' "$CONFIGF" | awk -F= '{print $2}' | s
 DBHOST=$(grep -Em 1 '^[^\/]*\$CFG->dbhost' "$CONFIGF" | awk -F= '{print $2}' | sed -re "s/[^']*?'([^']+)'.*$/\1/g")
 DBNAME=$(grep -Em 1 '^[^\/]*\$CFG->dbname' "$CONFIGF" | awk -F= '{print $2}' | sed -re "s/[^']*?'([^']+)'.*$/\1/g")
 DBUSER=$(grep -Em 1 '^[^\/]*\$CFG->dbuser' "$CONFIGF" | awk -F= '{print $2}' | sed -re "s/[^']*?'([^']+)'.*$/\1/g")
-DBPASS=$(grep -Em 1 '^[^\/]*\$CFG->dbpass' "$CONFIGF" | awk -F= '{print $2}' | sed -re "s/[^']*?'([^']+)'.*$/\1/g")
+DBPASS=$(grep -Em 1 '^[^\/]*\$CFG->dbpass' "$CONFIGF" | awk -F= '{print $2}' | sed -re "s/[^']*?'(.+)'.*$/\1/g" | sed -re "s/\\\'/\'/g")
 
 echo $DBHOST
 
